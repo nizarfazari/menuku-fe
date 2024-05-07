@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 import { Button } from "../ui/button";
+import { GoDot } from "react-icons/go";
 
 
 
@@ -17,5 +18,25 @@ export function CardMenu() {
                     </Button>
                 </div>
             </div>
+    )
+}
+
+
+export function CardMitra() {
+    return (
+        <div className="py-4">
+                <div className="flex">
+                <img className="rounded-lg w-1/3" src="https://source.unsplash.com/600x400" alt="" />
+                <div className="px-2 w-2/3"> {/* Set a width for the container */}
+                    <p className="text-lg font-bold text-slate-800 overflow-hidden whitespace-nowrap overflow-ellipsis">Cosan Coffee</p>
+                    <div className="flex">
+                    <p className="text-sm text-green-500">Buka</p>
+                    <GoDot />
+                    <p className="text-sm">Tutup 23.00 WIB</p>
+                    </div>
+                    <p>⭐ 4.8</p>
+                </div>
+                </div>
+        </div>
     )
 }

@@ -2,8 +2,6 @@
 
 import { CardMenu } from "@/components/profil/card-menu";
 import { CarouselVoucher } from "@/components/profil/carousel-voucher"
-import { Button } from "@/components/ui/button";
-import { BluetoothConnectedIcon, Plus } from "lucide-react";
 
 
 export default function Profil() {

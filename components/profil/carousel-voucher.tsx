@@ -16,7 +16,7 @@ export function CarouselVoucher() {
     <Carousel className="w-full max-w-sm py-2">
       <CarouselContent className="-ml-1">
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={index} className="pl-1">
             <div className="p-1">
               <Card>
               <div className="flex items-center space-x-4 rounded-md border p-4">
