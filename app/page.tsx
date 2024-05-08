@@ -1,11 +1,13 @@
 "use client"
 
-import { CardMenu, CardMitra } from "@/components/profil/card-menu";
-import { CarouselVoucher } from "@/components/profil/carousel-voucher";
+import { CardMenu, CardMitra } from "@/components/home/card-menu";
+import { CarouselBanner } from "@/components/home/carousel-banner";
+import { CarouselVoucher } from "@/components/home/carousel-voucher";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Plus } from "lucide-react";
+import Link from "next/link";
 import { CiCoffeeCup, CiLocationOn } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
 
@@ -34,8 +36,8 @@ export default function Home() {
 
             </div>
             <div className="py-5 px-5 pt-10">
-              <CarouselVoucher/>
-              <div className="">
+              <CarouselBanner/>
+              <div className="py-2">
                   <h1 className="text-lg font-bold text-slate-800">Kategori</h1>
                   <div className="flex py-5">
                     {categories.map((value, index) => (
@@ -53,12 +55,11 @@ export default function Home() {
 
               <div className="py-6">
                 <h3 className="text-lg font-bold text-slate-800">Rekomendasi</h3>
-                {Array.from({ length: 5 }).map((_, index) => (
-                    <a href="/profil">
-                      <CardMitra key={index}/>
-                    </a>
+                {mitra.map((value, index) => (
+                    <Link href={`/${value.username}`} key={index}>
+                      <CardMitra name={value.name}/>
+                    </Link>
                 ))}  
-                
               </div>
             </div>
     </main>
@@ -85,5 +86,28 @@ const categories = [
   {
     name: "Latte",
     path: "/coffee.svg",
+  }
+]
+
+const mitra = [
+  {
+    username: "kupiku-coffee",
+    name: "Kupiku Coffee",
+  },
+  {
+    username: "cosanidn",
+    name: "Cosan Coffee",
+  },
+  {
+    username: "fore",
+    name: "Fore Coffee",
+  },
+  {
+    username: "arahcoffee",
+    name: "Arah Coffee",
+  },
+  {
+    username: "budiaw",
+    name: "Budi Coffee",
   }
 ]

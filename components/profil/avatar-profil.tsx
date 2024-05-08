@@ -5,7 +5,7 @@ import { Avatar, AvatarImage } from "../ui/avatar";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 
-interface ProfilType {
+type ProfilType = {
     id: number,
     avatar: string,
     email: string,

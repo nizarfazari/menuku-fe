@@ -10,10 +10,17 @@ import {
 } from "@/components/ui/carousel"
 import { Button } from "../ui/button"
 import { toast } from "sonner"
+import Autoplay from "embla-carousel-autoplay"
 
 export function CarouselVoucher() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
+
   return (
-    <Carousel className="w-full max-w-sm py-2">
+    <Carousel className="w-full max-w-sm py-2"
+    plugins={[plugin.current]} onMouseEnter={plugin.current.stop}
+    onMouseLeave={plugin.current.reset}>
       <CarouselContent className="-ml-1">
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index} className="pl-1">
