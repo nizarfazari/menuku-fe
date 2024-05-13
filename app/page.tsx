@@ -1,14 +1,11 @@
 "use client"
 
-import { CardMenu, CardMitra } from "@/components/home/card-menu";
+import { CardMitra } from "@/components/home/card-menu";
 import { CarouselBanner } from "@/components/home/carousel-banner";
-import { CarouselVoucher } from "@/components/home/carousel-voucher";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Plus } from "lucide-react";
 import Link from "next/link";
-import { CiCoffeeCup, CiLocationOn } from "react-icons/ci";
+import {  CiLocationOn } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
 import useSWR from "swr";
 

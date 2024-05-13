@@ -1,4 +1,3 @@
-import AvatarProfil from "@/components/profil/avatar-profil";
 import TestFetch from "@/components/profil/test-fetch";
 
 
