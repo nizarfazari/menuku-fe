@@ -10,9 +10,23 @@ import { Plus } from "lucide-react";
 import Link from "next/link";
 import { CiCoffeeCup, CiLocationOn } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
+import useSWR from "swr";
 
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+
+type MitraType = {
+    id: number,
+    username: string,
+    name: string,
+    email: string,
+    image_url: string,
+}
 
 export default function Home() {
+
+  const { data, error, isLoading } = useSWR('https://menuku.beneboba.me/api/mitra', fetcher)
+
   return (
     <main className="container max-w-md mx-auto">
             <div className="bg-red-400 px-5 relative pb-10">
@@ -55,9 +69,11 @@ export default function Home() {
 
               <div className="py-6">
                 <h3 className="text-lg font-bold text-slate-800">Rekomendasi</h3>
-                {mitra.map((value, index) => (
-                    <Link href={`/${value.username}`} key={index}>
-                      <CardMitra name={value.name}/>
+                {
+                isLoading ? 'Loading' :
+                data.data.map((mitra: MitraType, i: number) => (
+                    <Link href={`/${mitra.username}`} key={i}>
+                      <CardMitra name={mitra.name} image={mitra.image_url}/>
                     </Link>
                 ))}  
               </div>

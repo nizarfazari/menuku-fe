@@ -11,13 +11,23 @@ import {
 import { Button } from "../ui/button"
 import { useState } from "react";
 
-export function CarouselSize() {
+
+type CategoryMenu = {
+  id: number,
+  name: string,
+  spcategory_id: number,
+}
+
+
+export function CarouselSize(props : {categoryMenu: CategoryMenu[]}) {
     const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     setIsActive(!isActive);
   };
 
+  const categoryMenuWithAll: CategoryMenu[] = [{ id: -1, name: 'All Menu', spcategory_id: -1 }, ...props.categoryMenu];
+  
   return (
     <Carousel
       opts={{
@@ -26,8 +36,8 @@ export function CarouselSize() {
       className="w-full max-w-sm py-4"
     >
       <CarouselContent className="-ml-1">
-        {categoryMenu.map((value, index) => (
-          <CarouselItem key={index} className="pl-1 basis-1/3">
+        {categoryMenuWithAll.map((value: CategoryMenu, i: number) => (
+          <CarouselItem key={i} className="pl-1 basis-1/3">
             <div className="">
               {/* <Card> */}
                 {/* <CardContent className="pl-6">
@@ -51,26 +61,26 @@ export function CarouselSize() {
 }
 
 
-const categoryMenu = [
-    {
-        name:"Coffee",
-    },
-    {
-        name:"Signature",
-    },
-    {
-        name:"Happy Awor",
-    },
-    {
-        name:"Non Coffee",
-    },
-    {
-        name:"Snacks",
-    },
-    {
-        name:"Signature",
-    },
-    {
-        name:"Happy Awor",
-    },
-]
+// const categoryMenu = [
+//     {
+//         name:"Coffee",
+//     },
+//     {
+//         name:"Signature",
+//     },
+//     {
+//         name:"Happy Awor",
+//     },
+//     {
+//         name:"Non Coffee",
+//     },
+//     {
+//         name:"Snacks",
+//     },
+//     {
+//         name:"Signature",
+//     },
+//     {
+//         name:"Happy Awor",
+//     },
+// ]

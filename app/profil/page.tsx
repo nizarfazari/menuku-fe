@@ -7,6 +7,9 @@ import { CarouselVoucher } from "@/components/home/carousel-voucher"
 export default function Profil() {
     return (
         <div className="container max-w-md mx-auto">
+            <div>
+                <img className="rounded- shadow-md" src="https://source.unsplash.com/600x400" alt="Hero" />
+            </div>
             <div className="py-6">
                 <h5 className="text-slate-500">Cafe</h5>
                 <h1 className="text-xl font-bold text-slate-800">Kupiku Coffee - Condong Catur</h1>
@@ -27,9 +30,9 @@ export default function Profil() {
                 <div className="py-4">
                     
                 </div>
-                {Array.from({ length: 5 }).map((_, index) => (
+                {/* {Array.from({ length: 5 }).map((_, index) => (
                     <CardMenu key={index}/>
-                ))}  
+                ))}   */}
                 
             </div>
         </div>

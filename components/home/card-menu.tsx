@@ -4,15 +4,15 @@ import { GoDot } from "react-icons/go";
 
 
 
-export function CardMenu() {
+export function CardMenu(props: {name: string, description: string, price: string}) {
     return (
         <div className="py-4">
                 <div className="flex">
                     <img className="rounded-lg w-1/3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQgM2tUhqZvIXOir3U48l9pE86PqFaL1m4MyhJZ3ymNw&s" alt="" />
                     <div className="px-2">
-                        <p className="text-sm font-medium text-slate-900 py-2">Paket Ayam Chicken Nashville</p>
-                        <p className="text-sm text-slate-700 truncate max-w-[calc(100%-4rem)]">1 Shot espresso ditambah dengan susu oat</p>
-                        <p className="py-2">Rp. 21.000</p>
+                        <p className="text-sm font-medium text-slate-900 py-2">{props.name}</p>
+                        <p className="text-sm text-slate-700 truncate max-w-[calc(100%-4rem)]">{props.description}</p>
+                        <p className="py-2">Rp. {props.price}</p>
                     </div>
                 </div>
             </div>
@@ -23,12 +23,12 @@ export function CardMenu() {
 </Button> */}
 
 
-export function CardMitra(props: {name: string}) {
+export function CardMitra(props: {name: string, image: string}) {
 
     return (
         <div className="py-4">
                 <div className="flex">
-                <img className="rounded-lg w-1/3" src="https://source.unsplash.com/600x400" alt="" />
+                <img className="rounded-lg w-1/3" src={props.image} alt={props.name} />
                 <div className="px-2 w-2/3"> {/* Set a width for the container */}
                     <p className="text-lg font-bold text-slate-800 overflow-hidden whitespace-nowrap overflow-ellipsis">{props.name}</p>
                     <div className="flex">
