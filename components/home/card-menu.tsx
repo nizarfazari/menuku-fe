@@ -22,7 +22,7 @@ export function CardMenu(props: {name: string, description: string, price: strin
       <div className="flex">
                 <img className="rounded-lg w-1/3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQgM2tUhqZvIXOir3U48l9pE86PqFaL1m4MyhJZ3ymNw&s" alt="" />
                 <div className="px-2">
-                    <p className="text-sm font-medium text-slate-900 py-2">{props.name}</p>
+                    <p className="text-sm font-semibold text-slate-900 py-2">{props.name}</p>
                     <p className="text-sm text-slate-700 truncate max-w-[calc(100%-4rem)]">{props.description}</p>
                     <p className="py-2">Rp. {formatNumberWithCommas(props.price)}</p>
                 </div>

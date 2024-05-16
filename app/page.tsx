@@ -4,6 +4,7 @@ import { CardMitra } from "@/components/home/card-menu";
 import { CarouselBanner } from "@/components/home/carousel-banner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { capitalizeFirstLetterOfEachWord } from "@/lib/utils";
 import Link from "next/link";
 import {  CiLocationOn } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
@@ -70,7 +71,7 @@ export default function Home() {
                 isLoading ? 'Loading' :
                 data.data.map((mitra: MitraType, i: number) => (
                     <Link href={`/${mitra.username}`} key={i}>
-                      <CardMitra name={mitra.name} image={mitra.image_url}/>
+                      <CardMitra name={capitalizeFirstLetterOfEachWord(mitra.name)} image={mitra.image_url}/>
                     </Link>
                 ))}  
               </div>
